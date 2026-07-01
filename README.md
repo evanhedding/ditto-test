@@ -50,6 +50,8 @@ to find the other nodes still searching. These nodes, once informed, switch to C
 and move straight to the pilot's location. Once all nodes stand informed, the mule switches
 and converges as well.
 
+![demo](/src/images/demo.gif)
+
 ## Reading the view
 
 - **Left panel** — the world-view. Agent dots use an identity-coloured halo
@@ -57,8 +59,6 @@ and converges as well.
   GREEN lines are live comms links; GREY cells are searched; the pilot is the RED square.
 - **Right column** — one mini-map per node, each showing that node's own replica in
   its identity colour, updating in real time as it discovers tiles or syncs.
-
-![Two nodes with world state synced](/src/images/example1.png)
 
 ## Sync strategy & conflict resolution
 
@@ -96,10 +96,8 @@ apart while two searchers were separated snaps back into agreement the instant t
 reconnect. This fragment-and-reform behavior is the heart of the demo, and you can
 watch it happen live in the per-node panels.
 
-Before sync:
 ![Two nodes with world state diverging](/src/images/unsynced.png)
 
-After sync:
 ![Two nodes with world state synced](/src/images/synced.png)
 
 ## Architecture
@@ -121,6 +119,11 @@ Three modes of operation for each node:
   rushing back. By staying on the move it naturally runs into the searchers who
   haven't heard the news yet and passes it along.
 - **CONVERGE** — once a searcher learns where the pilot is, it heads straight there.
+
+Crucially, no searcher is ever *told* to switch behavior. Each switches itself the
+moment its own knowledge changes: the finder becomes the mule simply by being the
+finder, and the others start regrouping the instant the news reaches them. The run
+ends when everyone knows the location and has gathered there.
 
 ## Key trade-offs & assumptions
 

@@ -18,8 +18,8 @@ inline const char* modeName(Mode m) {
 
 // All tunables in one place, seeded for reproducibility (§12).
 struct Config {
-    int      gridW         = 80;     // grid width  (cells) -- from search radius
-    int      gridH         = 60;     // grid height (cells)
+    int      gridW         = 60;     // grid width  (cells) -- from search radius
+    int      gridH         = 40;     // grid height (cells)
     int      numAgents     = 6;      // searchers (§3)
     double   commsRange    = 10.0;    // COMMS_RANGE: Euclidean, in cell units (§5)
     double   convergeRadius = 1.5;   // "gathered" tolerance around pilot (§8.5)
