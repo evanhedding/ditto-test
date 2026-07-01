@@ -18,10 +18,10 @@ inline const char* modeName(Mode m) {
 
 // All tunables in one place, seeded for reproducibility (§12).
 struct Config {
-    int      gridW         = 60;     // grid width  (cells) -- from search radius
+    int      gridW         = 80;     // grid width  (cells) -- from search radius
     int      gridH         = 60;     // grid height (cells)
     int      numAgents     = 6;      // searchers (§3)
-    double   commsRange    = 15.0;    // COMMS_RANGE: Euclidean, in cell units (§5)
+    double   commsRange    = 10.0;    // COMMS_RANGE: Euclidean, in cell units (§5)
     double   convergeRadius = 1.5;   // "gathered" tolerance around pilot (§8.5)
     int      maxTicks      = 8000;   // safety cap; success is the intended outcome
     unsigned seed          = 12345;  // single RNG seed -> deterministic run
