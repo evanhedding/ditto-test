@@ -40,7 +40,7 @@ an interesting run exactly. All other tunables live in `src/config.h`.
 - **Right column** — one mini-map per node, each showing that node's own replica in
   its identity colour, updating in real time as it discovers tiles or syncs.
 
-![Two nodes with world state synced](images/example1.png)
+![Two nodes with world state synced](/src/images/example1.png)
 
 ## Sync strategy & conflict resolution
 
@@ -78,9 +78,9 @@ apart while two searchers were separated snaps back into agreement the instant t
 reconnect. This fragment-and-reform behavior is the heart of the demo, and you can
 watch it happen live in the per-node panels.
 
-![Two nodes with world state diverging](images/unsynced.png)
+![Two nodes with world state diverging](/src/images/unsynced.png)
 
-![Two nodes with world state synced](images/synced.png)
+![Two nodes with world state synced](/src/images/synced.png)
 
 ## Architecture
 
