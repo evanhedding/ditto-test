@@ -32,7 +32,25 @@ cmake --build build -j
 Each run prints its `seed=` at startup; pass that value back via `--seed` to replay
 an interesting run exactly. All other tunables live in `src/config.h`.
 
-### Reading the view
+## Summary of operation
+
+This simulation is designed to have a configurable number of independent nodes set out from 
+the same location in search of a pilot that gets randomly placed somewhere in the world. 
+The nodes do have knowledge of the map size and boundaries, but do not know where the pilot
+is until one of them physically searches that cell.
+
+They have a distance-based network that simply connects and disconnects based on distance
+in the map. When two nodes sync they merge a conflict-free state struct that provides each 
+node with information of the other's searched cells, pilot knowledge, and mode status of 
+other nodes. 
+
+The node motion is very simplistic and each moves into a random unsearched neighbor at each
+step during search mode. When a one node finds the pilot, it switches to Mule mode and leaves
+to find the other nodes still searching. These nodes, once informed, switch to Converge mode
+and move straight to the pilot's location. Once all nodes stand informed, the mule switches
+and converges as well.
+
+## Reading the view
 
 - **Left panel** — the world-view. Agent dots use an identity-coloured halo
   with a mode-coloured centre (BLUE = SEARCHING, GOLD = MULE, GREEN = CONVERGING).
