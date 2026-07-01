@@ -96,7 +96,11 @@ apart while two searchers were separated snaps back into agreement the instant t
 reconnect. This fragment-and-reform behavior is the heart of the demo, and you can
 watch it happen live in the per-node panels.
 
+Pre-sync
+
 ![Two nodes with world state diverging](/src/images/unsynced.png)
+
+Post-sync
 
 ![Two nodes with world state synced](/src/images/synced.png)
 
