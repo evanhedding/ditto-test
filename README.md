@@ -122,11 +122,6 @@ Three modes of operation for each node:
   haven't heard the news yet and passes it along.
 - **CONVERGE** — once a searcher learns where the pilot is, it heads straight there.
 
-Crucially, no searcher is ever *told* to switch behavior. Each switches itself the
-moment its own knowledge changes: the finder becomes the mule simply by being the
-finder, and the others start regrouping the instant the news reaches them. The run
-ends when everyone knows the location and has gathered there.
-
 ## Key trade-offs & assumptions
 
 These are deliberate simplifications that keep the first version honest and robust:
